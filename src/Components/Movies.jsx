@@ -1,6 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
+import GlobalState from "../Context/globalState";
 
-const Movies = ({ movies }) => {
+const Movies = () => {
+  const {value} = useContext(GlobalState);
+  const [movies, setMovies] = value;
+  
   return (
     <>
       {movies.map((t, idx) => {
