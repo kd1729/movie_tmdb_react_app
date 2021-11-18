@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-5">
         <Movies movies={movies} />
       </div>
       <Footer />

@@ -5,10 +5,10 @@ const Movies = ({ movies }) => {
     <>
       {movies.map((t, idx) => {
         return (
-          <div className=" bg-green-300 m-4" key={idx}>
-            <h1 className="font-bold">{t.title}</h1>
-            <img src={"http://image.tmdb.org/t/p/w185//"+t.poster_path} alt={t.title} />
-            <h3 className="font-medium">Rating = {t.vote_average}</h3>
+          <div className=" bg-purple-300 rounded-t-lg m-4 flex flex-col justify-center items-center" key={idx}>
+            <div className="text-xl font-bold">{t.title}</div>
+            <img className="h-80 w-60" src={"http://image.tmdb.org/t/p/w780/"+t.poster_path} alt={t.title} />
+            <div className="font-medium">Rating = {t.vote_average}</div>
           </div>
         );
       })}
