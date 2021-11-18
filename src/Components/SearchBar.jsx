@@ -1,12 +1,20 @@
 import React from 'react';
 import { useState } from 'react';
+import axios from "axios";
 
 const SearchBar = () => {
 
     const [searchTerm, setSearchTerm] = useState('');
 
+
+    async function searchMovies(searchTerm) {
+        const response = await axios.get("https://api.themoviedb.org/3/search/movie?api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page=1&include_adult=false&query=" + searchTerm);
+        console.log(response.data.results);
+      }
+
     const handleChange = (event) => {
         setSearchTerm(event.target.value);
+        searchMovies(event.target.value);
     }
 
     return (
