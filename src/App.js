@@ -13,15 +13,19 @@ function App() {
   const [watchlist, setWatchlist] = useState([]);
   const [completed, setCompleted] = useState([]);
 
+  const [pageCount, setPageCount] = useState(1);
+  // console.log(pageCount);
+
   useEffect(() => {
     async function fetchData() {
       const res = await axios.get(
-        "https://api.themoviedb.org/3/trending/movie/week?api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page=1"
+        "https://api.themoviedb.org/3/trending/movie/week?api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page="+pageCount
       );
       setMovies(res.data.results);
     }
     fetchData();
-  }, []);
+  }, [pageCount]);
+
 
 
   return (
@@ -37,7 +41,12 @@ function App() {
         <div className="grid grid-cols-5">
           <Movies />
         </div>
-        
+        <div className="btn" onClick={() => setPageCount(Math.min(10, pageCount+1))}>
+          Next Page
+        </div>
+        <div className="btn" onClick={() => setPageCount(Math.max(1,pageCount-1))}>
+          Previous Page
+        </div>
         <Footer />
       </div>
     </GlobalState.Provider>
