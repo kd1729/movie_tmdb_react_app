@@ -9,6 +9,8 @@ import GlobalState from "./Context/globalState";
 function App() {
 
   const [movies, setMovies] = useState([]);
+  const [favourites, setFavourites] = useState([]);
+  const [watchlist, setWatchlist] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -22,11 +24,16 @@ function App() {
   }, []);
 
   return (
-    <GlobalState.Provider value =  {{ value : [movies, setMovies]}} >
+    <GlobalState.Provider
+      value={{
+        value: [movies, setMovies],
+        value2: [favourites, setFavourites],
+        value3: [watchlist, setWatchlist]
+      }} >
       <div className="App">
         <Header />
         <div className="grid grid-cols-5">
-          <Movies/>
+          <Movies />
         </div>
         <Footer />
       </div>
