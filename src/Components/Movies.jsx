@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import axios from "axios";
 import GlobalState from "../Context/globalState";
 
 const Movies = () => {
@@ -7,6 +8,9 @@ const Movies = () => {
   const [favourites, setFavourites] = value2;
   const [watchlist, setWatchlist] = value3;
   const [completed, setCompleted] = value4;
+
+  
+  const [pageCount, setPageCount] = useState(1);
 
   function checkBox1(e, movie) {
     const checked = e.target.checked;
@@ -31,6 +35,26 @@ const Movies = () => {
       ? setCompleted([...completed, movie])
       : setCompleted(completed.filter((complete) => complete.id !== movie.id));
   }
+
+
+  async function gotoNextPage() {
+    setPageCount(pageCount + 1);
+    const res = await axios.get(
+      "https://api.themoviedb.org/3/trending/movie/week?api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page=" + pageCount
+    );
+    setMovies(res.data.results);
+  }
+
+
+
+  async function gotoPreviousPage() {
+    setPageCount(pageCount - 1);
+    const res = await axios.get(
+      "https://api.themoviedb.org/3/trending/movie/week?api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page=" + pageCount
+    );
+    setMovies(res.data.results);
+  }
+
 
   return (
     <>
@@ -78,6 +102,18 @@ const Movies = () => {
           </div>
         );
       })}
+      <div
+        className="w-36 h-10 bg-green-900 text-center text-white px-4 py-2 mx-8 my-8"
+        onClick={gotoNextPage}
+      >
+        Next Page
+      </div>
+      <div
+        className="w-36 h-10 bg-green-900 text-center text-white px-4 py-2 mx-8 my-8"
+        onClick={gotoPreviousPage}
+      >
+        Previous Page
+      </div>
     </>
   );
 };

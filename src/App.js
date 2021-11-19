@@ -12,6 +12,7 @@ function App() {
   const [favourites, setFavourites] = useState([]);
   const [watchlist, setWatchlist] = useState([]);
   const [completed, setCompleted] = useState([]);
+
   useEffect(() => {
     async function fetchData() {
       const res = await axios.get(
@@ -21,6 +22,7 @@ function App() {
     }
     fetchData();
   }, []);
+
 
   return (
     <GlobalState.Provider
@@ -35,6 +37,7 @@ function App() {
         <div className="grid grid-cols-5">
           <Movies />
         </div>
+        
         <Footer />
       </div>
     </GlobalState.Provider>
