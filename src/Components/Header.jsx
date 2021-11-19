@@ -3,7 +3,7 @@ import SearchBar from "./SearchBar";
 
 const Header = () => {
   return (
-    <div className="bg-gray-200 flex">
+    <div className="bg-purple-600 flex">
       
       <SearchBar />
 
