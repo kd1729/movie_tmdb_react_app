@@ -2,10 +2,11 @@ import React, { useContext, useState } from "react";
 import GlobalState from "../Context/globalState";
 
 const Movies = () => {
-  const { value, value2, value3 } = useContext(GlobalState);
+  const { value, value2, value3, value4 } = useContext(GlobalState);
   const [movies, setMovies] = value;
   const [favourites, setFavourites] = value2;
   const [watchlist, setWatchlist] = value3;
+  const [completed, setCompleted] = value4;
 
   function checkBox1(e, movie) {
     const checked = e.target.checked;
@@ -21,6 +22,14 @@ const Movies = () => {
     checked
       ? setWatchlist([...watchlist, movie])
       : setWatchlist(watchlist.filter((watch) => watch.id !== movie.id));
+  }
+
+  function checkBox3(e, movie) {
+    const checked = e.target.checked;
+    checked ? (movie.completed = true) : (movie.completed = false);
+    checked
+      ? setCompleted([...completed, movie])
+      : setCompleted(completed.filter((complete) => complete.id !== movie.id));
   }
 
   return (
@@ -56,6 +65,15 @@ const Movies = () => {
                 onChange={(e) => checkBox2(e, t)}
               />
               <label>Add to Watch Later</label>
+            </div>
+
+            <div className="flex my-2">
+              <input
+                type="checkbox"
+                checked={t.completed ? true : false}
+                onChange={(e) => checkBox3(e, t)}
+              />
+              <label>Completed</label>
             </div>
           </div>
         );

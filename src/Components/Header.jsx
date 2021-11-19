@@ -4,10 +4,11 @@ import { useContext } from "react";
 import GlobalState from "../Context/globalState";
 
 const Header = () => {
-  const { value, value2, value3 } = useContext(GlobalState);
+  const { value, value2, value3, value4 } = useContext(GlobalState);
   const [movies, setMovies] = value;
   const [favourites, setFavourites] = value2;
   const [watchlist, setWatchlist] = value3;
+  const [completed, setCompleted] = value4;
 
   return (
     <div className="bg-purple-600 flex">
@@ -26,7 +27,10 @@ const Header = () => {
         >
           ⌚ Watch Later
         </div>
-        <div className="bg-green-500 font-medium h-12 mx-4 w-36 leading-12 text-center rounded-lg">
+        <div
+          className="bg-green-500 font-medium h-12 mx-4 w-36 leading-12 text-center rounded-lg"
+          onClick={() => setMovies(completed)}
+        >
           ✔️ Completed
         </div>
       </div>

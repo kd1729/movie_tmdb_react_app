@@ -11,13 +11,12 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [favourites, setFavourites] = useState([]);
   const [watchlist, setWatchlist] = useState([]);
-
+  const [completed, setCompleted] = useState([]);
   useEffect(() => {
     async function fetchData() {
       const res = await axios.get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page=1"
+        "https://api.themoviedb.org/3/trending/movie/week?api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page=1"
       );
-      // console.log(res.data.results);
       setMovies(res.data.results);
     }
     fetchData();
@@ -28,7 +27,8 @@ function App() {
       value={{
         value: [movies, setMovies],
         value2: [favourites, setFavourites],
-        value3: [watchlist, setWatchlist]
+        value3: [watchlist, setWatchlist],
+        value4: [completed, setCompleted]
       }} >
       <div className="App">
         <Header />
