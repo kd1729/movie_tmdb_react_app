@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 .btn{
-    @apply w-36 h-10 bg-green-600 text-center text-white px-4 py-2 mx-8 my-8 rounded-lg hover:bg-green-700 duration-300 cursor-pointer;
+    @apply w-36 h-10 bg-green-600 text-center text-white px-4 py-2 mx-8 my-8 rounded-lg hover:bg-green-700 duration-300 cursor-pointer shadow-lg;
 }
 
 .header-btn{
-    @apply bg-green-500 font-medium h-12 mx-4 w-36 leading-12 text-center rounded-lg hover:bg-green-600 duration-300 cursor-pointer;
+    @apply bg-green-500 font-medium h-12 mx-4 w-36 leading-12 text-center rounded-lg hover:bg-green-600 duration-300 cursor-pointer shadow-xl;
 }

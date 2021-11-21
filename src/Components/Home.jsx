@@ -15,17 +15,19 @@ const Home = () => {
       <div className="grid grid-cols-5">
         <Movies />
       </div>
-      <div
-        className="btn"
-        onClick={() => setPageCount(Math.min(10, pageCount + 1))}
-      >
-        Next Page
-      </div>
-      <div
-        className="btn"
-        onClick={() => setPageCount(Math.max(1, pageCount - 1))}
-      >
-        Previous Page
+      <div className="flex w-screen justify-between">
+        <div
+          className="btn"
+          onClick={() => setPageCount(Math.max(1, pageCount - 1))}
+        >
+          Previous Page
+        </div>
+        <div
+          className="btn"
+          onClick={() => setPageCount(Math.min(10, pageCount + 1))}
+        >
+          Next Page
+        </div>
       </div>
       <Footer />
     </div>
