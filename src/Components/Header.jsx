@@ -1,14 +1,9 @@
 import React from "react";
 import SearchBar from "./SearchBar";
-import { useContext } from "react";
-import GlobalState from "../Context/globalState";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const { value, value2, value3, value4 } = useContext(GlobalState);
-  const [movies, setMovies] = value;
-  const [favourites, setFavourites] = value2;
-  const [watchlist, setWatchlist] = value3;
-  const [completed, setCompleted] = value4;
+  const navigate = useNavigate();
 
   return (
     <div className="bg-purple-600 flex">
@@ -17,19 +12,25 @@ const Header = () => {
       <div className="container w-5/12  text-white flex items-center">
         <div
           className="bg-green-500 font-medium h-12 mx-4 w-36 leading-12 text-center rounded-lg"
-          onClick={() => setMovies(favourites)}
+          onClick={() => navigate("/")}
+        >
+          🏠 Home
+        </div>
+        <div
+          className="bg-green-500 font-medium h-12 mx-4 w-36 leading-12 text-center rounded-lg"
+          onClick={() => navigate("/Favourites")}
         >
           ❤️ Favorites
         </div>
         <div
           className="bg-green-500 font-medium h-12 mx-4 w-36 leading-12 text-center rounded-lg"
-          onClick={() => setMovies(watchlist)}
+          onClick={() => navigate("/WatchLater")}
         >
           ⌚ Watch Later
         </div>
         <div
           className="bg-green-500 font-medium h-12 mx-4 w-36 leading-12 text-center rounded-lg"
-          onClick={() => setMovies(completed)}
+          onClick={() => navigate("/Completed")}
         >
           ✔️ Completed
         </div>
