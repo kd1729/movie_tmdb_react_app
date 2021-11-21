@@ -11,25 +11,25 @@ const Header = () => {
 
       <div className="container w-5/12  text-white flex items-center">
         <div
-          className="bg-green-500 font-medium h-12 mx-4 w-36 leading-12 text-center rounded-lg"
+          className="header-btn"
           onClick={() => navigate("/")}
         >
           🏠 Home
         </div>
         <div
-          className="bg-green-500 font-medium h-12 mx-4 w-36 leading-12 text-center rounded-lg"
+          className="header-btn"
           onClick={() => navigate("/Favourites")}
         >
           ❤️ Favorites
         </div>
         <div
-          className="bg-green-500 font-medium h-12 mx-4 w-36 leading-12 text-center rounded-lg"
+          className="header-btn"
           onClick={() => navigate("/WatchLater")}
         >
           ⌚ Watch Later
         </div>
         <div
-          className="bg-green-500 font-medium h-12 mx-4 w-36 leading-12 text-center rounded-lg"
+          className="header-btn"
           onClick={() => navigate("/Completed")}
         >
           ✔️ Completed
