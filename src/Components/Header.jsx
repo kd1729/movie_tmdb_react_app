@@ -1,5 +1,6 @@
 import React from "react";
 import SearchBar from "./SearchBar";
+import SideBar from "./SideBar";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
@@ -7,6 +8,8 @@ const Header = () => {
 
   return (
     <div className="bg-purple-600 flex">
+
+      <SideBar />
       <SearchBar />
 
       <div className="container w-5/12  text-white flex items-center">
