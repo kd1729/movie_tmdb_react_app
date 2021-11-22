@@ -17,7 +17,7 @@ function App() {
   const [favourites, setFavourites] = useState([]);
   const [watchlist, setWatchlist] = useState([]);
   const [completed, setCompleted] = useState([]);
-  const [url, setUrl] = useState("https://api.themoviedb.org/3/trending/movie/week?api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page=");
+  const [url, setUrl] = useState("https://api.themoviedb.org/3/trending/movie/week?api_key=df032f0bbf7881c7e18f93539c8a73ba&page=");
   const [pageCount, setPageCount] = useState(1);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function App() {
     fetchData();
   }, [pageCount, url]);
 
-  // console.log("hello");
+  console.log(pageCount);
 
   return (
 

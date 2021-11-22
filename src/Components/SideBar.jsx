@@ -15,8 +15,8 @@ function SideBar() {
 
   async function setGenre(url) {
     const response = await axios.get(url);
+    // setPageCount(1);
     setUrl(url);
-    setPageCount(1);
     const data = response.data;
     setMovies(data.results);
   }
@@ -35,14 +35,14 @@ function SideBar() {
       <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
         <ul className="nav-menu-items" onClick={showSidebar}>
           <li className="navbar-toggle">
-            <Link to="#" className="menu-bars">
-              <AiIcons.AiOutlineClose />
+            <Link to="#" className="ml-8">
+              <AiIcons.AiOutlineClose/>
             </Link>
           </li>
           {SidebarData.map((item, index) => {
             return (
-              <li key={index} className={item.cName}>
-                  {item.icon}
+              <li key={index} className="nav-text">
+                  {index+1}
                   <span onClick={() => setGenre(item.url)}>{item.title}</span>
               </li>
             );
