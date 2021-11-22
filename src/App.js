@@ -8,6 +8,8 @@ import Home from "./Components/Home";
 import Favourites from './Components/Favourites';
 import WatchLater from './Components/WatchLater';
 import Completed from './Components/Completed';
+import SideBar from "./Components/SideBar";
+import { nanoid } from 'nanoid'
 
 function App() {
 
@@ -15,34 +17,40 @@ function App() {
   const [favourites, setFavourites] = useState([]);
   const [watchlist, setWatchlist] = useState([]);
   const [completed, setCompleted] = useState([]);
-
+  const [url, setUrl] = useState("https://api.themoviedb.org/3/trending/movie/week?api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page=");
   const [pageCount, setPageCount] = useState(1);
 
   useEffect(() => {
     async function fetchData() {
       const res = await axios.get(
-        "https://api.themoviedb.org/3/trending/movie/week?api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page=" + pageCount
+        // "https://api.themoviedb.org/3/movie/popular?api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page=1"
+        // "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page=1"
+      //  "https://api.themoviedb.org/3/discover/movie?with_genres=878&sort_by=vote_average.desc&api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page=1"
+        url + pageCount
       );
       setMovies(res.data.results);
     }
     fetchData();
-  }, [pageCount]);
+  }, [pageCount, url]);
 
-
+  // console.log("hello");
 
   return (
+
     <GlobalState.Provider
       value={{
         value: [movies, setMovies],
         value2: [favourites, setFavourites],
         value3: [watchlist, setWatchlist],
         value4: [completed, setCompleted],
-        value5: [pageCount, setPageCount]
+        value5: [pageCount, setPageCount],
+        value6: [url, setUrl]
       }} >
 
 
       <BrowserRouter>
         <Routes>
+          <Route path= {nanoid()} element={<SideBar />} />
           <Route path="/" element={<Home />} />
           <Route path="/Favourites" element={<Favourites />} />
           <Route path="/WatchLater" element={<WatchLater />} />

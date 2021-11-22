@@ -1,13 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import * as AiIcons from "react-icons/ai";
 import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
-
+import GlobalState from "../Context/globalState";
+import axios from "axios";
 function SideBar() {
   const [sidebar, setSidebar] = useState(false);
-
+  const { value, value5, value6 } = useContext(GlobalState);
+  const [movies, setMovies] = value;
+  const [url, setUrl] = value6;
+  const [pageCount, setPageCount] = value5;
   const showSidebar = () => setSidebar(!sidebar);
+
+  async function setGenre(url) {
+    const response = await axios.get(url);
+    setUrl(url);
+    setPageCount(1);
+    const data = response.data;
+    setMovies(data.results);
+  }
+
 
   return (
     <>
@@ -29,10 +42,8 @@ function SideBar() {
           {SidebarData.map((item, index) => {
             return (
               <li key={index} className={item.cName}>
-                <Link to={item.path}>
                   {item.icon}
-                  <span>{item.title}</span>
-                </Link>
+                  <span onClick={() => setGenre(item.url)}>{item.title}</span>
               </li>
             );
           })}
