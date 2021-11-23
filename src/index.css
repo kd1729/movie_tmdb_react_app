@@ -43,7 +43,7 @@
     padding: 8px 0px 8px 16px;
     font-size: 16px;
     font-weight: bold;
-    color: rgb(15, 14, 14);
+    color: rgb(87, 54, 39);
     list-style: none;
     height: 32px;
   }
@@ -52,6 +52,7 @@
   .nav-text:hover {
     background-color: #ffffff;
     cursor: pointer;
+    color: #7C3AED;
   }
   
   .nav-menu-items {
