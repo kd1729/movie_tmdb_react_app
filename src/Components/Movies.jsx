@@ -37,43 +37,45 @@ const Movies = () => {
       {movies.map((t, idx) => {
         return (
           <div
-            className=" bg-purple-300 rounded-t-lg m-4 flex flex-col justify-center items-center"
+            className=" bg-purple-400 rounded-lg m-4 flex flex-col justify-center items-center"
             key={idx}
           >
-            <div className="text-xl font-bold">{t.title}</div>
+            <div className="title">{t.title}</div>
             <img
               className="h-80 w-60"
               src={"http://image.tmdb.org/t/p/w780/" + t.poster_path}
               alt={t.title}
             />
 
-            <div className="font-medium">Rating = {t.vote_average}</div>
+            <div className="rating">Rating = {t.vote_average}</div>
 
-            <div className="flex my-2">
-              <input
-                type="checkbox"
-                checked={t.fav ? true : false}
-                onChange={(e) => checkBox1(e, t)}
-              />
-              <label>Add to Favourites</label>
-            </div>
+            <div className="flex flex-col py-4">
+              <div className="flex my-1">
+                <input
+                  type="checkbox"
+                  checked={t.fav ? true : false}
+                  onChange={(e) => checkBox1(e, t)}
+                />
+                <label>Add to Favourites</label>
+              </div>
 
-            <div className="flex my-2">
-              <input
-                type="checkbox"
-                checked={t.watchLater ? true : false}
-                onChange={(e) => checkBox2(e, t)}
-              />
-              <label>Add to Watch Later</label>
-            </div>
+              <div className="flex my-1">
+                <input
+                  type="checkbox"
+                  checked={t.watchLater ? true : false}
+                  onChange={(e) => checkBox2(e, t)}
+                />
+                <label>Add to Watch Later</label>
+              </div>
 
-            <div className="flex my-2">
-              <input
-                type="checkbox"
-                checked={t.completed ? true : false}
-                onChange={(e) => checkBox3(e, t)}
-              />
-              <label>Completed</label>
+              <div className="flex my-1">
+                <input
+                  type="checkbox"
+                  checked={t.completed ? true : false}
+                  onChange={(e) => checkBox3(e, t)}
+                />
+                <label>Completed</label>
+              </div>
             </div>
           </div>
         );
