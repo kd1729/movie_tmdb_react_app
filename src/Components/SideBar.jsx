@@ -15,7 +15,7 @@ function SideBar() {
 
   async function setGenre(url) {
     const response = await axios.get(url);
-    // setPageCount(1);
+    setPageCount(1);
     setUrl(url);
     const data = response.data;
     setMovies(data.results);

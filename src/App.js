@@ -23,9 +23,6 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       const res = await axios.get(
-        // "https://api.themoviedb.org/3/movie/popular?api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page=1"
-        // "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page=1"
-      //  "https://api.themoviedb.org/3/discover/movie?with_genres=878&sort_by=vote_average.desc&api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page=1"
         url + pageCount
       );
       setMovies(res.data.results);
