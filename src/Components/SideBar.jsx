@@ -1,11 +1,15 @@
 import React, { useState, useContext } from "react";
 import * as AiIcons from "react-icons/ai";
 import * as FaIcons from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import GlobalState from "../Context/globalState";
 import axios from "axios";
+
 function SideBar() {
+
+  const navigate = useNavigate();
+
   const [sidebar, setSidebar] = useState(false);
   const { value, value5, value6 } = useContext(GlobalState);
   const setMovies = value[1];
@@ -20,6 +24,7 @@ function SideBar() {
     setUrl(url);
     const data = response.data;
     setMovies(data.results);
+    navigate("/");
   }
 
   return (
