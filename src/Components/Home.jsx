@@ -5,7 +5,12 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Movies from "./Movies";
 
+import { useAuth0 } from "@auth0/auth0-react";
+
 const Home = () => {
+
+  const { user, isAuthenticated } = useAuth0();
+
   const { value5 } = useContext(GlobalState);
   const [pageCount, setPageCount] = value5;
 

@@ -11,6 +11,8 @@ import Completed from './Components/Completed';
 import SideBar from "./Components/SideBar";
 import { nanoid } from 'nanoid'
 
+import  LoginLogout from './Components/Authetication/LoginLogout';
+
 function App() {
 
   const [movies, setMovies] = useState([]);
@@ -48,7 +50,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path= {nanoid()} element={<SideBar />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<LoginLogout />} />
+          <Route path= "/LoginLogout" element={<LoginLogout />} />
           <Route path="/Favourites" element={<Favourites />} />
           <Route path="/WatchLater" element={<WatchLater />} />
           <Route path="/Completed" element={<Completed />} />
