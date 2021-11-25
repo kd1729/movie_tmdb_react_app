@@ -8,9 +8,10 @@ import axios from "axios";
 function SideBar() {
   const [sidebar, setSidebar] = useState(false);
   const { value, value5, value6 } = useContext(GlobalState);
-  const [movies, setMovies] = value;
-  const [url, setUrl] = value6;
-  const [pageCount, setPageCount] = value5;
+  const setMovies = value[1];
+  const setUrl = value6[1];
+  const setPageCount = value5[1];
+  
   const showSidebar = () => setSidebar(!sidebar);
 
   async function setGenre(url) {
@@ -21,14 +22,13 @@ function SideBar() {
     setMovies(data.results);
   }
 
-
   return (
     <>
       <div className="navbar">
         <Link to="#">
           <div className="header-btn flex" onClick={showSidebar}>
-          <FaIcons.FaBars className="mx-4 mt-4"/> 
-          <div> Genres </div>
+            <FaIcons.FaBars className="mx-4 mt-4" />
+            <div> Genres </div>
           </div>
         </Link>
       </div>
@@ -36,14 +36,18 @@ function SideBar() {
         <ul className="nav-menu-items" onClick={showSidebar}>
           <li className="navbar-toggle">
             <Link to="#" className="ml-8">
-              <AiIcons.AiOutlineClose/>
+              <AiIcons.AiOutlineClose />
             </Link>
           </li>
           {SidebarData.map((item, index) => {
             return (
-              <li key={index} className="nav-text" onClick={() => setGenre(item.url)}>
-                  {index+1}
-                  <span>{item.title}</span>
+              <li
+                key={index}
+                className="nav-text"
+                onClick={() => setGenre(item.url)}
+              >
+                {index + 1}
+                <span>{item.title}</span>
               </li>
             );
           })}

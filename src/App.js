@@ -30,7 +30,7 @@ function App() {
     fetchData();
   }, [pageCount, url]);
 
-  console.log(pageCount);
+  // console.log(pageCount);
 
   return (
 

@@ -5,7 +5,7 @@ import GlobalState from "../Context/globalState";
 
 const SearchBar = () => {
   const { value } = useContext(GlobalState);
-  const [movies, setMovies] = value;
+  const  setMovies = value[1];
 
   const [searchTerm, setSearchTerm] = useState("");
 

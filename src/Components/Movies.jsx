@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import GlobalState from "../Context/globalState";
 
 const Movies = () => {
   const { value, value2, value3, value4 } = useContext(GlobalState);
-  const [movies, setMovies] = value;
+  const movies = value[0];
   const [favourites, setFavourites] = value2;
   const [watchlist, setWatchlist] = value3;
   const [completed, setCompleted] = value4;
