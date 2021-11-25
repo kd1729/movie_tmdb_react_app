@@ -41,9 +41,9 @@ function SideBar() {
           </li>
           {SidebarData.map((item, index) => {
             return (
-              <li key={index} className="nav-text">
+              <li key={index} className="nav-text" onClick={() => setGenre(item.url)}>
                   {index+1}
-                  <span onClick={() => setGenre(item.url)}>{item.title}</span>
+                  <span>{item.title}</span>
               </li>
             );
           })}
