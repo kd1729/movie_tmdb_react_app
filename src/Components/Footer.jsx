@@ -3,6 +3,7 @@ import { AiFillInstagram } from "react-icons/ai";
 import { AiFillGithub } from "react-icons/ai";
 import { AiFillFacebook } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
+import { useAuth0 } from "@auth0/auth0-react";
 
 
 const Footer = () => {
