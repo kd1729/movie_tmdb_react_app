@@ -11,6 +11,14 @@
     @apply bg-green-500 font-medium h-12 mx-4 w-36 text-white leading-12 text-center rounded-lg hover:bg-green-600 duration-300 cursor-pointer shadow-xl;
 }
 
+.login-btn, .logout-btn{
+    @apply bg-red-500 font-medium h-12 mx-4 w-36 text-white leading-12 text-center rounded-lg hover:bg-red-600 duration-300 cursor-pointer shadow-xl;
+}
+
+/* .not_logged_in{
+    font-size: 10rem;
+} */
+
 .title{
   @apply text-lg h-16 w-60 text-white text-center mx-4 mt-4 rounded-t-md font-bold bg-blue-800 flex flex-col justify-center items-center font-open-sans;
 }
