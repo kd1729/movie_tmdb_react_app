@@ -9,9 +9,11 @@ import Favourites from './Components/Favourites';
 import WatchLater from './Components/WatchLater';
 import Completed from './Components/Completed';
 import SideBar from "./Components/SideBar";
-import { nanoid } from 'nanoid'
+import { nanoid } from 'nanoid';
+
 
 function App() {
+
 
   const [movies, setMovies] = useState([]);
   const [favourites, setFavourites] = useState([]);
@@ -47,7 +49,7 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route path= {nanoid()} element={<SideBar />} />
+          <Route path={nanoid()} element={<SideBar />} />
           <Route path="/" element={<Home />} />
           <Route path="/Favourites" element={<Favourites />} />
           <Route path="/WatchLater" element={<WatchLater />} />

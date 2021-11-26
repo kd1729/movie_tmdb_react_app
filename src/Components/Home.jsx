@@ -5,11 +5,17 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Movies from "./Movies";
 
+import { useAuth0 } from "@auth0/auth0-react";
+
 const Home = () => {
+
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
+
   const { value5 } = useContext(GlobalState);
   const [pageCount, setPageCount] = value5;
 
   return (
+    isAuthenticated ? (
     <div>
       <Header />
       <div className="grid grid-cols-5">
@@ -31,6 +37,14 @@ const Home = () => {
       </div>
       <Footer />
     </div>
+    ) : (
+      <div className= "flex w-screen py-32">
+      <div className="text-5xl mx-16 text-white">You are not logged in.</div>
+      <div className="login-btn" onClick={loginWithRedirect}>
+        Login
+      </div>
+    </div>
+    )
   );
 };
 

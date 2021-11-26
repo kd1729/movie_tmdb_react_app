@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import GlobalState from "../Context/globalState";
 
+
 const Movies = () => {
+
   const { value, value2, value3, value4 } = useContext(GlobalState);
   const movies = value[0];
   const [favourites, setFavourites] = value2;
@@ -47,7 +49,7 @@ const Movies = () => {
               alt={t.title}
             />
 
-            <div className="rating">Rating = {t.vote_average}</div>
+            <div className="rating">Rating = {t.vote_average} ⭐️</div>
 
             <div className="flex flex-col py-4">
               <div className="flex my-1">
