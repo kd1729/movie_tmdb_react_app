@@ -7,10 +7,10 @@ const Logout = () => {
 
     return (
             <button
-              class="uppercase h-12 mt-3 text-white w-full rounded bg-red-700 hover:bg-red-800"
+              className="uppercase h-12 mt-3 text-white w-full rounded bg-red-700 hover:bg-red-800"
               onClick={() => logout()}
             >
-
+              {console.log(user)}
               Logout
             </button>
         

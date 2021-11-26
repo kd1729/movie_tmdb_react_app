@@ -7,9 +7,13 @@ const LoginLogout = () => {
 
   const { isAuthenticated } = useAuth0();
 
-  return (
-    isAuthenticated ?  <Logout /> : <Login />  
-  );
+  if(isAuthenticated) {
+    return <Logout />;
+  }
+  else {
+    return <Login />;
+  }
+
 };
 
 export default LoginLogout;
