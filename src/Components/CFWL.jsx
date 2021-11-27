@@ -68,7 +68,7 @@ const CFWL = ({ props }) => {
             <ReactStars
               classNames="rating"
               count={5}
-              value={t.vote_average/2}
+              value={t.vote_average / 2}
               size={24}
               activeColor="#ffd700"
               isHalf={true}
@@ -76,13 +76,23 @@ const CFWL = ({ props }) => {
             />
             ,
             <div className="flex">
-              <div className="flex my-2">
+              {/* <div className="flex my-2">
                 <input
                   type="checkbox"
                   checked={t.fav ? true : false}
                   onChange={(e) => checkBox1(e, t)}
                 />
                 <label className="label123">Add to Favourites</label>
+              </div> */}
+
+              <div class="heart">
+                <input
+                  type="checkbox"
+                  className="heart__checkbox"
+                  checked={t.fav ? true : false}
+                  onClick={(e) => checkBox1(e, t)}
+                />
+                <div class="heart__icon"></div>
               </div>
 
               <div className="flex my-2">
