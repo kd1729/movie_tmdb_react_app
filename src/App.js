@@ -4,7 +4,7 @@ import axios from "axios";
 import GlobalState from "./Context/globalState";
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from "./Components/Home";
+import Movies from "./Components/Movies";
 import Favourites from './Components/Favourites';
 import WatchLater from './Components/WatchLater';
 import Completed from './Components/Completed';
@@ -32,8 +32,6 @@ function App() {
     fetchData();
   }, [pageCount, url]);
 
-  // console.log(pageCount);
-
   return (
 
     <GlobalState.Provider
@@ -50,7 +48,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path={nanoid()} element={<SideBar />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Movies />} />
           <Route path="/Favourites" element={<Favourites />} />
           <Route path="/WatchLater" element={<WatchLater />} />
           <Route path="/Completed" element={<Completed />} />

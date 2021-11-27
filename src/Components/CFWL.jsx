@@ -1,8 +1,6 @@
 import React from "react";
 import { useContext } from "react";
 import GlobalState from "../Context/globalState";
-import Header from "./Header";
-import Footer from "./Footer";
 
 const CFWL = ({ props }) => {
   const { value2, value3, value4 } = useContext(GlobalState);
@@ -35,28 +33,27 @@ const CFWL = ({ props }) => {
   }
 
   return (
-    <>
-      <Header />
-      <div className="grid grid-cols-5">
-        {props.map((t, idx) => {
-          return (
-            <div
-              className=" bg-purple-300 rounded-t-lg m-4 flex flex-col justify-center items-center"
-              key={idx}
-            >
-              <div className="text-xl font-bold">{t.title}</div>
-              <img
-                className="h-80 w-60"
-                src={"http://image.tmdb.org/t/p/w780/" + t.poster_path}
-                alt="Not Found"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src =
-                    "https://image.shutterstock.com/image-illustration/leather-background-jpeg-version-260nw-101031550.jpg";
-                }}
-              />
-              <div className="font-medium">Rating = {t.vote_average}</div>
+    <div className="grid grid-cols-5">
+      {props.map((t, idx) => {
+        return (
+          <div
+            className=" bg-purple-300 rounded-t-lg m-4 flex flex-col justify-center items-center"
+            key={idx}
+          >
+            <div className="text-xl font-bold">{t.title}</div>
+            <img
+              className="h-80 w-60"
+              src={"http://image.tmdb.org/t/p/w780/" + t.poster_path}
+              alt="Not Found"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src =
+                  "https://image.shutterstock.com/image-illustration/leather-background-jpeg-version-260nw-101031550.jpg";
+              }}
+            />
+            <div className="font-medium">Rating = {t.vote_average}</div>
 
+            <div className="flex">
               <div className="flex my-2">
                 <input
                   type="checkbox"
@@ -84,11 +81,10 @@ const CFWL = ({ props }) => {
                 <label className="label123">Completed</label>
               </div>
             </div>
-          );
-        })}
-      </div>
-      <Footer />
-    </>
+          </div>
+        );
+      })}
+    </div>
   );
 };
 

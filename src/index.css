@@ -15,9 +15,6 @@
     @apply bg-red-500 font-medium h-12 mx-4 w-36 text-white leading-12 text-center rounded-lg hover:bg-red-600 duration-300 cursor-pointer shadow-xl;
 }
 
-.label123{
-    @apply font-bold text-center;
-}
 
 .title{
   @apply text-lg h-16 w-60 text-white text-center mx-4 mt-4 rounded-t-md font-bold bg-blue-800 flex flex-col justify-center items-center font-open-sans;
