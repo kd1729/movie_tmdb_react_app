@@ -5,13 +5,16 @@ import { useNavigate } from "react-router-dom";
 
 import { useAuth0 } from "@auth0/auth0-react";
 const Header = () => {
-  const { logout } = useAuth0();
+  const { user, logout } = useAuth0();
   const navigate = useNavigate();
+  const welcomeMessage = user ? `Welcome, ${user.nickname}` : "";
 
   return (
     <div className="bg-purple-600 flex">
       <SideBar />
       <SearchBar />
+
+      <div className="text-white text-2xl font-bold mx-12 mt-2">{welcomeMessage}</div>
 
       <div className="container w-1/2  text-white flex items-center">
         <div className="header-btn" onClick={() => navigate("/")}>
@@ -26,8 +29,6 @@ const Header = () => {
         <div className="header-btn" onClick={() => navigate("/Completed")}>
           ✔️ Completed
         </div>
-
-        
 
         <div className="logout-btn" onClick={logout}>
           Logout

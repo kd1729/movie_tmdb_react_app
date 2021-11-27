@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
+import { useContext } from "react";
 import GlobalState from "../Context/globalState";
+import Header from "./Header";
+import Footer from "./Footer";
 
-const Movies = () => {
-  const { value, value2, value3, value4 } = useContext(GlobalState);
-  const movies = value[0];
+const CFWL = ({ props }) => {
+  const { value2, value3, value4 } = useContext(GlobalState);
   const [favourites, setFavourites] = value2;
   const [watchlist, setWatchlist] = value3;
   const [completed, setCompleted] = value4;
@@ -34,44 +36,46 @@ const Movies = () => {
 
   return (
     <>
-      {movies.map((t, idx) => {
-        return (
-          <div
-            className=" bg-yellow-200 rounded-lg m-4 flex flex-col justify-center items-center"
-            key={idx}
-          >
-            <div className="title">{t.title}</div>
-            <img
-              className="h-80 w-60"
-              src={"http://image.tmdb.org/t/p/w780/" + t.poster_path}
-              alt="Not Found"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src =
-                  "https://image.shutterstock.com/image-illustration/leather-background-jpeg-version-260nw-101031550.jpg";
-              }}
-            />
-            <div className="rating">Rating = {t.vote_average} ⭐️</div>
-            <div className="flex flex-row py-4">
-              <div className="flex my-1">
+      <Header />
+      <div className="grid grid-cols-5">
+        {props.map((t, idx) => {
+          return (
+            <div
+              className=" bg-purple-300 rounded-t-lg m-4 flex flex-col justify-center items-center"
+              key={idx}
+            >
+              <div className="text-xl font-bold">{t.title}</div>
+              <img
+                className="h-80 w-60"
+                src={"http://image.tmdb.org/t/p/w780/" + t.poster_path}
+                alt="Not Found"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src =
+                    "https://image.shutterstock.com/image-illustration/leather-background-jpeg-version-260nw-101031550.jpg";
+                }}
+              />
+              <div className="font-medium">Rating = {t.vote_average}</div>
+
+              <div className="flex my-2">
                 <input
                   type="checkbox"
                   checked={t.fav ? true : false}
                   onChange={(e) => checkBox1(e, t)}
                 />
-                <label className="label123">Favourites</label>
+                <label className="label123">Add to Favourites</label>
               </div>
 
-              <div className="flex my-1 mx-1">
+              <div className="flex my-2">
                 <input
                   type="checkbox"
                   checked={t.watchLater ? true : false}
                   onChange={(e) => checkBox2(e, t)}
                 />
-                <label className="label123">Watch Later</label>
+                <label className="label123">Add to Watch Later</label>
               </div>
 
-              <div className="flex my-1">
+              <div className="flex my-2">
                 <input
                   type="checkbox"
                   checked={t.completed ? true : false}
@@ -80,11 +84,12 @@ const Movies = () => {
                 <label className="label123">Completed</label>
               </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
+      <Footer />
     </>
   );
 };
 
-export default Movies;
+export default CFWL;
