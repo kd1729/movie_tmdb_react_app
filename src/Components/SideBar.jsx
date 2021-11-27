@@ -28,7 +28,7 @@ function SideBar() {
   }
 
   return (
-    <>
+    <div className="z-10">
       <div className="navbar">
         <Link to="#">
           <div className="header-btn flex" onClick={showSidebar}>
@@ -58,7 +58,7 @@ function SideBar() {
           })}
         </ul>
       </nav>
-    </>
+    </div>
   );
 }
 

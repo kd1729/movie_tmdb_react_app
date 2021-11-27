@@ -10,6 +10,7 @@ const Movies = () => {
   const movies = value[0];
   const [pageCount, setPageCount] = value5;
   const { loginWithRedirect, isAuthenticated } = useAuth0();
+  // console.log(movies);
 
 
   return (

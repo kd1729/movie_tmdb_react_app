@@ -40,18 +40,29 @@ const CFWL = ({ props }) => {
             className=" bg-purple-300 rounded-t-lg m-4 flex flex-col justify-center items-center"
             key={idx}
           >
-            <div className="text-xl font-bold">{t.title}</div>
-            <img
-              className="h-80 w-60"
-              src={"http://image.tmdb.org/t/p/w780/" + t.poster_path}
-              alt="Not Found"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src =
-                  "https://image.shutterstock.com/image-illustration/leather-background-jpeg-version-260nw-101031550.jpg";
-              }}
-            />
-            <div className="font-medium">Rating = {t.vote_average}</div>
+            <div className="title">{t.title}</div>
+
+            <div className="flip-card">
+              <div className="flip-card-inner">
+                <div className="flip-card-front">
+                  <img
+                    className="h-80 w-60"
+                    src={"http://image.tmdb.org/t/p/w780/" + t.poster_path}
+                    alt="Not Found"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src =
+                        "https://image.shutterstock.com/image-illustration/leather-background-jpeg-version-260nw-101031550.jpg";
+                    }}
+                  />
+                </div>
+                <div className="flip-card-back">
+                  {t.overview}
+                </div>
+              </div>
+            </div>
+
+            <div className="rating">Rating = {t.vote_average}</div>
 
             <div className="flex">
               <div className="flex my-2">
