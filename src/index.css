@@ -1,137 +1,133 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.btn{
-    @apply w-36 h-10 bg-green-600 text-center text-white px-4 py-2 mx-8 my-8 rounded-lg hover:bg-green-700 duration-300 cursor-pointer shadow-lg;
+.btn {
+  @apply w-36 h-10 bg-green-600 text-center text-white px-4 py-2 mx-8 my-8 rounded-lg hover:bg-green-700 duration-300 cursor-pointer shadow-lg;
 }
 
-.header-btn{
-    @apply bg-green-500 font-medium h-12 mx-4 w-36 text-white leading-12 text-center rounded-lg hover:bg-green-600 duration-300 cursor-pointer shadow-xl;
+.header-btn {
+  @apply bg-green-500 font-medium h-12 mx-4 w-36 text-white leading-12 text-center rounded-lg hover:bg-green-600 duration-300 cursor-pointer shadow-xl;
 }
 
-.login-btn, .logout-btn{
-    @apply bg-red-500 font-medium h-12 mx-4 w-36 text-white leading-12 text-center rounded-lg hover:bg-red-600 duration-300 cursor-pointer shadow-xl;
+.login-btn,
+.logout-btn {
+  @apply bg-red-500 font-medium h-12 mx-4 w-36 text-white leading-12 text-center rounded-lg hover:bg-red-600 duration-300 cursor-pointer shadow-xl;
 }
 
-
-.title{
+.title {
   @apply text-lg h-16 w-60 text-white text-center mx-4 mt-4 rounded-t-md font-bold bg-blue-800 flex flex-col justify-center items-center font-open-sans;
 }
 
-.rating{
-  @apply text-base h-12 w-40 text-white rounded-b-md text-center mx-4 font-bold bg-purple-800 flex flex-col justify-center items-center font-open-sans;
+.rating {
+  @apply h-12 w-60 rounded-b-md  bg-purple-800 flex justify-center items-center;
 }
 
-
 .navbar {
-    background-color: #7C3AED ;
-    height: 80px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  
-  
-  .nav-menu {
-    background-color: rgb(183, 247, 181);
-    width: 250px;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    transition: 150ms;
-  }
-  
-  .nav-menu.active {
-    left: 0;
-    transition: 350ms;
-  }
-  
-  .nav-text {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 8px 0px 8px 16px;
-    font-size: 16px;
-    font-weight: bold;
-    color: rgb(87, 54, 39);
-    list-style: none;
-    height: 32px;
-  }
-  
-  
-  .nav-text:hover {
-    background-color: #ffffff;
-    cursor: pointer;
-    color: #7C3AED;
-  }
-  
-  .nav-menu-items {
-    width: 100%;
-  }
-  
-  .navbar-toggle {
-    background-color: rgb(183, 247, 181);
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  
-  span {
-    margin-left: 16px;
-  }
+  background-color: #7c3aed;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 
+.nav-menu {
+  background-color: rgb(183, 247, 181);
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 150ms;
+}
 
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
 
+.nav-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 0px 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(87, 54, 39);
+  list-style: none;
+  height: 32px;
+}
 
+.nav-text:hover {
+  background-color: #ffffff;
+  cursor: pointer;
+  color: #7c3aed;
+}
 
-  .flip-card {
-    background-color: transparent;
-    width: 15rem;
-    height: 20rem;
-    border: 1px solid #f1f1f1;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
-  }
-  
-  /* This container is needed to position the front and back side */
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-  }
-  
-  /* Do an horizontal flip when you move the mouse over the flip box container */
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-  
-  /* Position the front and back side */
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
-  }
-  
-  /* Style the front side (fallback if image is missing) */
-  .flip-card-front {
-    background-color: #bbb;
-    color: black;
-  }
-  
-  /* Style the back side */
-  .flip-card-back {
-    background-color: rgb(216, 231, 246);
-    color: white;
-    transform: rotateY(180deg);
-  }
+.nav-menu-items {
+  width: 100%;
+}
+
+.navbar-toggle {
+  background-color: rgb(183, 247, 181);
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+span {
+  margin-left: 16px;
+}
+
+/* Below Code Copied from https://www.w3schools.com/howto/howto_css_flip_card.asp */
+
+.flip-card {
+  background-color: transparent;
+  width: 15rem;
+  height: 20rem;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: rgb(1, 30, 59);
+  color: white;
+  transform: rotateY(180deg);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

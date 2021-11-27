@@ -1,6 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import GlobalState from "../Context/globalState";
+import ReactStars from "react-rating-stars-component";
 
 const CFWL = ({ props }) => {
   const { value2, value3, value4 } = useContext(GlobalState);
@@ -9,7 +10,7 @@ const CFWL = ({ props }) => {
   const [completed, setCompleted] = value4;
 
   function checkBox1(e, movie) {
-    const checked = e.target.checked;
+    const checked = e.target.checked && !favourites.includes(movie);
     checked ? (movie.fav = true) : (movie.fav = false);
     checked
       ? setFavourites([...favourites, movie])
@@ -17,7 +18,7 @@ const CFWL = ({ props }) => {
   }
 
   function checkBox2(e, movie) {
-    const checked = e.target.checked;
+    const checked = e.target.checked && !watchlist.includes(movie);
     checked ? (movie.watchLater = true) : (movie.watchLater = false);
     checked
       ? setWatchlist([...watchlist, movie])
@@ -25,7 +26,7 @@ const CFWL = ({ props }) => {
   }
 
   function checkBox3(e, movie) {
-    const checked = e.target.checked;
+    const checked = e.target.checked && !completed.includes(movie);
     checked ? (movie.completed = true) : (movie.completed = false);
     checked
       ? setCompleted([...completed, movie])
@@ -41,7 +42,6 @@ const CFWL = ({ props }) => {
             key={idx}
           >
             <div className="title">{t.title}</div>
-
             <div className="flip-card">
               <div className="flip-card-inner">
                 <div className="flip-card-front">
@@ -56,14 +56,25 @@ const CFWL = ({ props }) => {
                     }}
                   />
                 </div>
-                <div className="flip-card-back">
+                <div className="flip-card-back px-4">
+                  <div className="text-red-700 text-2xl font-bold">
+                    {t.release_date}
+                  </div>
                   {t.overview}
                 </div>
               </div>
             </div>
-
-            <div className="rating">Rating = {t.vote_average}</div>
-
+            {/* <div className="rating">Rating = {t.vote_average}</div> */}
+            <ReactStars
+              classNames="rating"
+              count={5}
+              value={t.vote_average/2}
+              size={24}
+              activeColor="#ffd700"
+              isHalf={true}
+              edit={false}
+            />
+            ,
             <div className="flex">
               <div className="flex my-2">
                 <input
