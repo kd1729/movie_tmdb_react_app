@@ -151,6 +151,7 @@ span {
   z-index: 2;
   cursor: pointer;
   transform: scale(1) rotate(45deg);
+  margin: 0 1rem;
 }
 .heart__checkbox:focus {
   outline: none;

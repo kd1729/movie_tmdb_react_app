@@ -65,16 +65,27 @@ const CFWL = ({ props }) => {
               </div>
             </div>
             {/* <div className="rating">Rating = {t.vote_average}</div> */}
-            <ReactStars
-              classNames="rating"
-              count={5}
-              value={t.vote_average / 2}
-              size={24}
-              activeColor="#ffd700"
-              isHalf={true}
-              edit={false}
-            />
-            ,
+
+            <div className="rating">
+              <div className="heart mx-4">
+                <input
+                  type="checkbox"
+                  className="heart__checkbox"
+                  checked={t.fav ? true : false}
+                  onClick={(e) => checkBox1(e, t)}
+                />
+                <div class="heart__icon"></div>
+              </div>
+              <ReactStars
+                count={5}
+                value={t.vote_average / 2}
+                size={24}
+                activeColor="#ffd700"
+                isHalf={true}
+                edit={false}
+              />
+            </div>
+
             <div className="flex">
               {/* <div className="flex my-2">
                 <input
@@ -85,26 +96,16 @@ const CFWL = ({ props }) => {
                 <label className="label123">Add to Favourites</label>
               </div> */}
 
-              <div class="heart">
-                <input
-                  type="checkbox"
-                  className="heart__checkbox"
-                  checked={t.fav ? true : false}
-                  onClick={(e) => checkBox1(e, t)}
-                />
-                <div class="heart__icon"></div>
-              </div>
-
-              <div className="flex my-2">
+              <div className="flex m-2">
                 <input
                   type="checkbox"
                   checked={t.watchLater ? true : false}
                   onChange={(e) => checkBox2(e, t)}
                 />
-                <label className="label123">Add to Watch Later</label>
+                <label className="label123">Watch Later</label>
               </div>
 
-              <div className="flex my-2">
+              <div className="flex m-2">
                 <input
                   type="checkbox"
                   checked={t.completed ? true : false}
