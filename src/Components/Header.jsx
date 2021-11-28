@@ -1,6 +1,7 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import SideBar from "./SideBar";
+import SortBy from "./SortBy";
 import { useNavigate } from "react-router-dom";
 
 import { useAuth0 } from "@auth0/auth0-react";
@@ -13,6 +14,7 @@ const Header = () => {
     <div className="bg-purple-600 flex">
       <SideBar />
       <SearchBar />
+      <SortBy />
 
       <div className="text-white text-2xl font-bold mx-12 mt-2">{welcomeMessage}</div>
 
