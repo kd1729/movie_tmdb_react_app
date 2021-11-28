@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import GlobalState from "../Context/globalState";
 import ReactStars from "react-rating-stars-component";
+import { BsFillBookmarkFill } from 'react-icons/bs'
 
 const CFWL = ({ props }) => {
   const { value2, value3, value4 } = useContext(GlobalState);
@@ -64,26 +65,36 @@ const CFWL = ({ props }) => {
                 </div>
               </div>
             </div>
-            {/* <div className="rating">Rating = {t.vote_average}</div> */}
 
-            <div className="rating">
+            <div className="rating flex">
               <div className="heart mx-4">
                 <input
                   type="checkbox"
                   className="heart__checkbox"
                   checked={t.fav ? true : false}
                   onClick={(e) => checkBox1(e, t)}
+                  readOnly={true}
                 />
-                <div class="heart__icon"></div>
+                <div className="heart__icon"></div>
               </div>
-              <ReactStars
-                count={5}
-                value={t.vote_average / 2}
-                size={24}
-                activeColor="#ffd700"
-                isHalf={true}
-                edit={false}
-              />
+
+              <div className="text-white font-bold ml-8">
+                 {t.vote_average}
+              </div>
+              <div className="mr-8">
+                <ReactStars
+                  count={1}
+                  value={1}
+                  size={24}
+                  activeColor="#ffd700"
+                  edit={false}
+                />
+              </div>
+
+              {/* <BsFillBookmarkFill color="red" size="3x" /> */}
+
+
+
             </div>
 
             <div className="flex">
@@ -101,6 +112,7 @@ const CFWL = ({ props }) => {
                   type="checkbox"
                   checked={t.watchLater ? true : false}
                   onChange={(e) => checkBox2(e, t)}
+                  readOnly={true}
                 />
                 <label className="label123">Watch Later</label>
               </div>
@@ -110,6 +122,7 @@ const CFWL = ({ props }) => {
                   type="checkbox"
                   checked={t.completed ? true : false}
                   onChange={(e) => checkBox3(e, t)}
+                  readOnly={true}
                 />
                 <label className="label123">Completed</label>
               </div>
