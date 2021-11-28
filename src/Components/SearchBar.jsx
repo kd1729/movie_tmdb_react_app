@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useContext } from "react";
 import axios from "axios";
 import GlobalState from "../Context/globalState";
+import { FaSearch } from "react-icons/fa";
 
 const SearchBar = () => {
   const { value } = useContext(GlobalState);
@@ -23,16 +24,16 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="container h-20 pl-10 pt-5">
+    <div className="relative container h-20 pl-4 pt-5">
       <input
         type="text"
-        className="h-10 w-72 pr-8 pl-5 rounded z-0 focus:shadow focus:outline-none"
+        className="h-10 w-64 pl-5 rounded z-0 focus:shadow focus:outline-none"
         placeholder="Search movie..."
         onChange={handleChange}
         value={searchTerm}
       />
-      <div className="absolute top-4 right-3">
-        <i className="fa fa-search text-gray-400 z-20 hover:text-gray-500"></i>{" "}
+      <div className="absolute left-60 top-8">
+        <FaSearch />
       </div>
     </div>
   );
