@@ -25,10 +25,13 @@ const SortBy = () => {
   return (
     <div className="text-xl pt-6 focus:outline-none rounded">
       <div>
-        <select name="sort_categories" id="sort_categories" onChange={sortBy}>
-          <option value="1" selected="selected">
-            Popularity
-          </option>
+        <select
+          name="sort_categories"
+          id="sort_categories"
+          defaultValue="1"
+          onChange={sortBy}
+        >
+          <option value="1">Popularity</option>
           <option value="2">Avg. Rating</option>
           <option value="3">Release Date</option>
           <option value="4">Revenue</option>
