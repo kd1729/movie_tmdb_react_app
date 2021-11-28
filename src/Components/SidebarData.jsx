@@ -1,5 +1,5 @@
 const baseURL_START = "https://api.themoviedb.org/3/discover/movie?with_genres="
-const baseURL_END = "&sort_by=vote_average.desc&api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page="
+const baseURL_END = "&sort_by=popularity.desc&api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page="
 
 export const SidebarData = [
   {
