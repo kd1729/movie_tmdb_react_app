@@ -2,25 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .btn {
-  @apply w-36 h-10 bg-green-600 text-center text-white px-4 py-2 mx-8 my-8 rounded-lg hover:bg-green-700 duration-300 cursor-pointer shadow-lg;
+  @apply w-24 h-12 bg-green-600 text-center leading-12 text-white m-6 rounded-lg hover:bg-green-700 duration-300 cursor-pointer shadow-lg;
 }
 
 .header-btn {
-  @apply bg-green-500 font-medium h-12 mx-4 w-36 text-white leading-12 text-center rounded-lg hover:bg-green-600 duration-300 cursor-pointer shadow-xl;
+  @apply  bg-green-500 font-medium h-10 w-32 mx-2 text-white leading-10 text-center rounded-lg hover:bg-green-600 duration-300 cursor-pointer shadow-xl;
+}
+
+.genre-btn {
+  @apply  flex bg-green-500 font-medium h-10 w-32 mr-2 ml-8 text-white leading-10 text-center rounded-lg hover:bg-green-600 duration-300 cursor-pointer shadow-xl;
 }
 
 .login-btn,
 .logout-btn {
-  @apply bg-red-500 font-medium h-12 mx-4 w-36 text-white leading-12 text-center rounded-lg hover:bg-red-600 duration-300 cursor-pointer shadow-xl;
+  @apply bg-red-500 font-medium h-10 w-32 mr-12 ml-2 text-white leading-10 text-center rounded-lg hover:bg-red-600 duration-300 cursor-pointer shadow-xl;
 }
 
 .title {
-  @apply text-lg h-16 w-60 text-white text-center mx-4 mt-4 rounded-t-md font-bold bg-blue-800 flex flex-col justify-center items-center font-open-sans;
+  @apply text-base h-14 w-52 text-white text-center mt-4 rounded-t-md font-bold bg-blue-800 flex flex-col justify-center items-center font-open-sans;
 }
 
 .rating {
-  @apply h-12 w-60 rounded-b-md  bg-purple-800 flex justify-center items-center;
+  @apply h-10 w-52 rounded-b-md  bg-purple-800 flex justify-center items-center;
 }
 
 .navbar {
@@ -87,8 +97,8 @@ span {
 
 .flip-card {
   background-color: transparent;
-  width: 15rem;
-  height: 20rem;
+  width: 13rem;
+  height: 18rem;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
@@ -128,8 +138,7 @@ span {
   background-color: rgb(1, 30, 59);
   color: white;
   transform: rotateY(180deg);
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-y: auto;
 }
 
 
@@ -145,7 +154,7 @@ span {
   appearance: none;
   position: absolute;
   top: calc(var(--size) * -.4);
-  left: calc(var(--size) * -.2);
+  left: calc(var(--size) * -1);
   width: calc(var(--size) * 1.5);
   height: calc(var(--size) * 1.5);
   z-index: 2;

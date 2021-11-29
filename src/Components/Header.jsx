@@ -13,10 +13,12 @@ const Header = () => {
   return (
     <div className="bg-purple-600 flex">
       <SideBar />
+      <SortBy />  
       <SearchBar />
-      <SortBy />
 
-      <div className="text-white text-2xl font-bold mx-12 mt-2">{welcomeMessage}</div>
+      <div className="text-white text-xl font-bold mx-12 mt-2">
+        {welcomeMessage}
+      </div>
 
       <div className="container w-1/2  text-white flex items-center">
         <div className="header-btn" onClick={() => navigate("/")}>

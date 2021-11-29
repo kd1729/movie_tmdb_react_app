@@ -2,17 +2,17 @@ const baseURL_START = "https://api.themoviedb.org/3/discover/movie?with_genres="
 const baseURL_END = "&sort_by=popularity.desc&api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page="
 
 export const SidebarData = [
-  {
-    title: 'Trending',
-    url: 'https://api.themoviedb.org/3/trending/movie/week?sort_by=popularity.desc&api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page=',
-  },
+  // {
+  //   title: 'Trending',
+  //   url: 'https://api.themoviedb.org/3/trending/movie?api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&sort_by=vote_average.desc&page=',
+  // },
   {
     title: 'Popular',
-    url: 'https://api.themoviedb.org/3/movie/popular?api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page=',
+    url: 'https://api.themoviedb.org/3/movie/popular?api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&sort_by=vote_average.desc&page=',
   },
   {
     title: 'R Rated',
-    url: 'https://api.themoviedb.org/3/discover/movie/?api_key=df032f0bbf7881c7e18f93539c8a73ba&certification_country=US&certification=R&sort_by=vote_average.desc@page=',
+    url: 'https://api.themoviedb.org/3/discover/movie/?api_key=df032f0bbf7881c7e18f93539c8a73ba&certification_country=US&certification=R&sort_by=vote_average.desc&page=',
   },
   {
     title: 'Kids',

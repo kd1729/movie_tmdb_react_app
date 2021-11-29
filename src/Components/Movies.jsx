@@ -4,6 +4,7 @@ import CFWL from "./CFWL";
 import Header from "./Header";
 import Footer from "./Footer";
 import { useAuth0 } from "@auth0/auth0-react";
+import ParticlesBg from "particles-bg";
 
 const Movies = () => {
   const { value, value5 } = useContext(GlobalState);
@@ -22,16 +23,18 @@ const Movies = () => {
           className="btn"
           onClick={() => setPageCount(Math.max(1, pageCount - 1))}
         >
-          Previous Page
+          Previous 
         </div>
         <div
           className="btn"
           onClick={() => setPageCount(Math.min(10, pageCount + 1))}
         >
-          Next Page
+          Next 
         </div>
       </div>
     <Footer />
+    <ParticlesBg  type="random" bg={true}/>
+    
     </>
     ) : (
       <div className= "flex w-screen py-32">

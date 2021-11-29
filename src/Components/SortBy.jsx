@@ -6,7 +6,7 @@ const SortBy = () => {
   const [url, setUrl] = value6;
   const setPageCount = value5[1];
 
-  async function setSortBy(criteria) {
+  function setSortBy(criteria) {
     var p = "popularity.desc";
     var q = "vote_average.desc";
     var r = "release_date.desc";
@@ -37,7 +37,7 @@ const SortBy = () => {
       case "2":
         category = "vote_average.desc";
         break;
-      case "3 Date":
+      case "3":
         category = "release_date.desc";
         break;
       case "4":

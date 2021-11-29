@@ -17,7 +17,7 @@ function SideBar() {
   
   const showSidebar = () => setSidebar(!sidebar);
 
-  async function setGenre(url) {
+  function setGenre(url) {
     setPageCount(1);
     setUrl(url);
     navigate("/");
@@ -27,8 +27,8 @@ function SideBar() {
     <div className="z-10">
       <div className="navbar">
         <Link to="#">
-          <div className="header-btn flex" onClick={showSidebar}>
-            <FaIcons.FaBars className="mx-4 mt-4" />
+          <div className="genre-btn" onClick={showSidebar}>
+            <FaIcons.FaBars className="mx-4 mt-3" />
             <div> Genres </div>
           </div>
         </Link>

@@ -36,11 +36,11 @@ const CFWL = ({ props }) => {
   }
 
   return (
-    <div className="grid grid-cols-5">
+    <div className="grid grid-cols-5 px-60 gap-x-8">
       {props.map((t, idx) => {
         return (
           <div
-            className=" bg-purple-300 rounded-t-lg m-4 flex flex-col justify-center items-center"
+            className=" bg-purple-300 rounded-2xl mt-8 flex flex-col justify-center items-center"
             key={idx}
           >
             <div className="title">{t.title}</div>
@@ -48,7 +48,7 @@ const CFWL = ({ props }) => {
               <div className="flip-card-inner">
                 <div className="flip-card-front">
                   <img
-                    className="h-80 w-60"
+                    className="h-72 w-52"
                     src={"http://image.tmdb.org/t/p/w780/" + t.poster_path}
                     alt="Not Found"
                     onError={(e) => {
@@ -67,7 +67,7 @@ const CFWL = ({ props }) => {
               </div>
             </div>
 
-            <div className="rating flex">
+            <div className="rating">
               <div className="heart mx-4">
                 <input
                   type="checkbox"
@@ -83,11 +83,8 @@ const CFWL = ({ props }) => {
                  {t.vote_average}
               </div>
               <div className="mr-8">
-                <MdStarRate  color="yellow"/>
+                <MdStarRate  color="yellow" size={24} />
               </div>
-
-              {/* <BsFillBookmarkFill color="red" size="3x" /> */}
-                
 
 
             </div>
