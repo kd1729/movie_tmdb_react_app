@@ -1,8 +1,9 @@
 import React from "react";
 import { useContext } from "react";
 import GlobalState from "../Context/globalState";
-import ReactStars from "react-rating-stars-component";
-import { BsFillBookmarkFill } from 'react-icons/bs'
+import { MdStarRate } from "react-icons/md"
+
+
 
 const CFWL = ({ props }) => {
   const { value2, value3, value4 } = useContext(GlobalState);
@@ -82,17 +83,11 @@ const CFWL = ({ props }) => {
                  {t.vote_average}
               </div>
               <div className="mr-8">
-                <ReactStars
-                  count={1}
-                  value={1}
-                  size={24}
-                  activeColor="#ffd700"
-                  edit={false}
-                />
+                <MdStarRate  color="yellow"/>
               </div>
 
               {/* <BsFillBookmarkFill color="red" size="3x" /> */}
-
+                
 
 
             </div>

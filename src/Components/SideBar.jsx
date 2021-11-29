@@ -4,26 +4,22 @@ import * as FaIcons from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import GlobalState from "../Context/globalState";
-import axios from "axios";
+
 
 function SideBar() {
 
   const navigate = useNavigate();
 
   const [sidebar, setSidebar] = useState(false);
-  const { value, value5, value6 } = useContext(GlobalState);
-  const setMovies = value[1];
+  const { value5, value6 } = useContext(GlobalState);
   const setUrl = value6[1];
   const setPageCount = value5[1];
   
   const showSidebar = () => setSidebar(!sidebar);
 
   async function setGenre(url) {
-    const response = await axios.get(url);
     setPageCount(1);
     setUrl(url);
-    const data = response.data;
-    setMovies(data.results);
     navigate("/");
   }
 

@@ -4,7 +4,7 @@ const baseURL_END = "&sort_by=popularity.desc&api_key=df032f0bbf7881c7e18f93539c
 export const SidebarData = [
   {
     title: 'Trending',
-    url: 'https://api.themoviedb.org/3/trending/movie/week?api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page=',
+    url: 'https://api.themoviedb.org/3/trending/movie/week?sort_by=popularity.desc&api_key=df032f0bbf7881c7e18f93539c8a73ba&language=en-US&page=',
   },
   {
     title: 'Popular',
