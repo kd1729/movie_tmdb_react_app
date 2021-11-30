@@ -17,10 +17,10 @@ function SideBar() {
   
   const showSidebar = () => setSidebar(!sidebar);
 
-  function setGenre(url) {
+  function setGenre(url, title) {
     setPageCount(1);
     setUrl(url);
-    navigate("/");
+    navigate(`/${title}`);
   }
 
   return (
@@ -45,7 +45,7 @@ function SideBar() {
               <li
                 key={index}
                 className="nav-text"
-                onClick={() => setGenre(item.url)}
+                onClick={() => setGenre(item.url, item.title)}
               >
                 {index + 1}
                 <span>{item.title}</span>

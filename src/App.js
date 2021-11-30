@@ -49,7 +49,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path={nanoid()} element={<SideBar />} />
-          <Route path="/" element={<Movies />} />
+          <Route path="/*" element={<Movies />} />
+          <Route path="/:title" element={<Movies />} />
           <Route path="/Favourites" element={<Favourites />} />
           <Route path="/WatchLater" element={<WatchLater />} />
           <Route path="/Completed" element={<Completed />} />
