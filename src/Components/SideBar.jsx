@@ -1,14 +1,13 @@
 import React, { useState, useContext } from "react";
 import * as AiIcons from "react-icons/ai";
 import * as FaIcons from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import GlobalState from "../Context/globalState";
 
 
 function SideBar() {
 
-  const navigate = useNavigate();
 
   const [sidebar, setSidebar] = useState(false);
   const { value5, value6 } = useContext(GlobalState);
@@ -16,12 +15,6 @@ function SideBar() {
   const setPageCount = value5[1];
   
   const showSidebar = () => setSidebar(!sidebar);
-
-  function setGenre(url, title) {
-    setPageCount(1);
-    setUrl(url);
-    navigate(`/${title}`);
-  }
 
   return (
     <div className="z-10">
@@ -42,14 +35,16 @@ function SideBar() {
           </li>
           {SidebarData.map((item, index) => {
             return (
+              <Link to={`/${item.title}`} key={index}>
               <li
                 key={index}
                 className="nav-text"
-                onClick={() => setGenre(item.url, item.title)}
+                onClick={() => {setPageCount(1); setUrl(item.url)}}
               >
                 {index + 1}
                 <span>{item.title}</span>
               </li>
+              </Link>
             );
           })}
         </ul>
