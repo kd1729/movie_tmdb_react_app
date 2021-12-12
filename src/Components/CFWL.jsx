@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import GlobalState from "../Context/globalState";
 import { MdStarRate } from "react-icons/md"
+import ParticlesBg from "particles-bg";
 
 
 
@@ -37,10 +38,11 @@ const CFWL = ({ props }) => {
 
   return (
     <div className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:px-20 md:px-60 lg:px-80 md:gap-x-8 lg:gap-x-20 sm:gap-y-4 lg:gap-y-4">
+      <ParticlesBg  type="cobweb" bg={true}/>
       {props.map((t, idx) => {
         return (
           <div
-            className=" bg-purple-300 rounded-2xl sm:mt-4 lg:mt-8 flex flex-col justify-center items-center"
+            className="border-solid border-8 rounded-2xl sm:mt-4 lg:mt-8 flex flex-col justify-center items-center"
             key={idx}
           >
             <div className="title">{t.title}</div>
@@ -89,16 +91,7 @@ const CFWL = ({ props }) => {
 
             </div>
 
-            <div className="flex flex-col justify-center align-center">
-              {/* <div className="flex my-2">
-                <input
-                  type="checkbox"
-                  checked={t.fav ? true : false}
-                  onChange={(e) => checkBox1(e, t)}
-                />
-                <label className="label123">Add to Favourites</label>
-              </div> */}
-
+            <div className="text-white flex flex-col justify-center align-center">
               <div className="flex m-1">
                 <input
                   type="checkbox"

@@ -4,7 +4,7 @@ import CFWL from "./CFWL";
 import Header from "./Header";
 import Footer from "./Footer";
 import { useAuth0 } from "@auth0/auth0-react";
-// import ParticlesBg from "particles-bg";
+
 
 const Movies = () => {
   const { value, value5 } = useContext(GlobalState);
@@ -33,7 +33,6 @@ const Movies = () => {
         </div>
       </div>
     <Footer />
-    {/* <ParticlesBg  type="random" bg={true}/> */}
     
     </>
     ) : (
