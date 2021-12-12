@@ -26,11 +26,11 @@
 }
 
 .title {
-  @apply text-base h-14 w-52 text-white text-center mt-4 rounded-t-md font-bold bg-blue-800 flex flex-col justify-center items-center font-open-sans;
+  @apply sm:text-sm md:text-sm lg:text-base sm:h-8 md:h-10 lg:h-12 sm:w-40 md:w-44 lg:w-52 text-white text-center sm:mt-2 mt-4 rounded-t-md font-bold bg-blue-800 flex flex-col justify-center items-center font-open-sans;
 }
 
 .rating {
-  @apply h-10 w-52 rounded-b-md  bg-purple-800 flex justify-center items-center;
+  @apply sm:h-6 md:h-8 lg:h-10 sm:w-40 md:w-44 lg:w-52 rounded-b-md  bg-purple-800 flex justify-center items-center;
 }
 
 .navbar {
@@ -97,8 +97,6 @@ span {
 
 .flip-card {
   background-color: transparent;
-  width: 13rem;
-  height: 18rem;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 

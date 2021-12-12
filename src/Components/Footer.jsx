@@ -9,7 +9,7 @@ const Footer = () => {
 
   return (
     <div className="bg-blue-700 text-3xl text-white text-center inset-x-0 bottom-0 p-4 flex">
-      <div className="">© onlykingKD 2021</div>
+      <div className="">© onlykingKD 2022</div>
 
       <div className="flex justify-around absolute right-20 w-48">
         <a href="https://github.com/onlykingKD/movie_db_react_app" rel="noreferrer noopener" target="_blank">

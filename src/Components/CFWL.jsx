@@ -36,19 +36,19 @@ const CFWL = ({ props }) => {
   }
 
   return (
-    <div className="grid grid-cols-5 px-60 gap-x-8">
+    <div className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:px-20 md:px-60 lg:px-80 md:gap-x-8 lg:gap-x-20 sm:gap-y-4 lg:gap-y-4">
       {props.map((t, idx) => {
         return (
           <div
-            className=" bg-purple-300 rounded-2xl mt-8 flex flex-col justify-center items-center"
+            className=" bg-purple-300 rounded-2xl sm:mt-4 lg:mt-8 flex flex-col justify-center items-center"
             key={idx}
           >
             <div className="title">{t.title}</div>
-            <div className="flip-card">
+            <div className="sm:40 md:w-44 lg:w-52 sm:h-60 md:h-68 lg:h-72 flip-card">
               <div className="flip-card-inner">
                 <div className="flip-card-front">
                   <img
-                    className="h-72 w-52"
+                    className="sm:h-44 md:h-60 lg:h-72 sm:w-36 md:w-44 lg:w-52"
                     src={"http://image.tmdb.org/t/p/w780/" + t.poster_path}
                     alt="Not Found"
                     onError={(e) => {
@@ -89,7 +89,7 @@ const CFWL = ({ props }) => {
 
             </div>
 
-            <div className="flex">
+            <div className="flex flex-col justify-center align-center">
               {/* <div className="flex my-2">
                 <input
                   type="checkbox"
@@ -99,14 +99,14 @@ const CFWL = ({ props }) => {
                 <label className="label123">Add to Favourites</label>
               </div> */}
 
-              <div className="flex m-2">
+              <div className="flex m-1">
                 <input
                   type="checkbox"
                   checked={t.watchLater ? true : false}
                   onChange={(e) => checkBox2(e, t)}
                   readOnly={true}
                 />
-                <label className="label123">Watch Later</label>
+                <label className="font-medium text-xl px-2">Watch Later</label>
               </div>
 
               <div className="flex m-2">
@@ -116,7 +116,7 @@ const CFWL = ({ props }) => {
                   onChange={(e) => checkBox3(e, t)}
                   readOnly={true}
                 />
-                <label className="label123">Completed</label>
+                <label className="font-medium text-xl px-2">Completed</label>
               </div>
             </div>
           </div>
